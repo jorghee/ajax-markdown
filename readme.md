@@ -1,12 +1,12 @@
 # <samp>Task about Ajax - Markdown files</samp>
 ### Sobre cómo levantar un servidor con Nodejs
 1. Lo primero que vamos a hacer es descargar nodejs, junto con este se descarga el manejador de paquetes `npm`.
-> Descargar en OS linux con el package manager 'pacman'
+> Descargar en OS linux con el package manager `pacman`
 ```sh
 $ sudo pacman -S nodejs
 ```
 
-2. Después creamos un directorio para nuestro proyecto y aqui iniciamos un proyecto con node.js 
+2. Después creamos un directorio para nuestro proyecto y estamos listos para iniciar un proyecto con node.js 
 > comenzar proyecto node.js
 ```sh
 $ npm init -y
@@ -18,7 +18,7 @@ $ npm init -y
 $ npm install express
 ```
 4. Ya tenemos el entorno necesario para iniciar el proyecto, ahora levantemos el servidor
-> Ejemplo de cómo levantar nuestro servidor con express
+> Ejemplo de cómo levantar nuestro servidor con express, archivo `server.js`
 ```javascript
 // Usamos el modulo de express
 const express = require("express");
@@ -33,7 +33,11 @@ app.get('/', (request, response) => {
 });
 
 // 3000 es el puerto
-app.listen(3000);
+app.listen(3000, () => console.log("Listing on http://localhost:3000"));
 ```
+> Lanzamos el servidor
+```sh
+$ node server.js
+`
 
-3. Utilizaremos una librería para realizar la conversion de Markdown a HTML. El profesor esta brindando un ejemplo sobre cómo hacerlo, leer el doc virtual.
+5. Utilizaremos una librería para realizar la conversion de Markdown a HTML. El profesor esta brindando un ejemplo sobre cómo hacerlo, leer el doc virtual.
