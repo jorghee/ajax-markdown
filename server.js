@@ -1,5 +1,5 @@
-const path = require('path');
-const fs = require("fs");
+const path = require("node:path");
+const fs = require("node:fs");
 // const MarkdownIt = require("markdown-it");
 const bp = require("body-parser");
 const express = require("express");
@@ -27,6 +27,23 @@ app.get("/files", (request, response) => {
       return;
     }
     response.json(files);
+  });
+});
+
+// Crear un archivo
+app.post("/files", (request, response) => {
+  // Recuperamos los valores
+  const { filename, content } = request.body;
+  console.log(filename, content);
+
+  const filePath = path.resolve(MARKDOWN_DIR, filename);
+  fs.writeFile(filePath, content, error => {
+    if (error) {
+      console.log(error);
+      response.json({ error: "No se pudo crear el archivo" });
+    }
+
+    response.json({ message: "Archivo creado existosamente" });
   });
 });
 
