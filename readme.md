@@ -38,6 +38,6 @@ app.listen(3000, () => console.log("Listing on http://localhost:3000"));
 > Lanzamos el servidor
 ```sh
 $ node server.js
-`
+```
 
 5. Utilizaremos una librería para realizar la conversion de Markdown a HTML. El profesor esta brindando un ejemplo sobre cómo hacerlo, leer el doc virtual.
