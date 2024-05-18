@@ -1,0 +1,15 @@
+{
+  "name": "ajax-markdown",
+  "version": "1.0.0",
+  "description": "1. Lo primero que vamos a hacer es descargar nodejs, junto con este se descarga el manejador de paquetes `npm`. > Descargar en OS linux con el package manager 'pacman' ```sh $ sudo pacman -S nodejs ``` 2. Ahora que ya tenemos 'node.js' podemos iniciar el proyecto > Comenzar proyecto node.js ```sh $ npm init -y ```",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
