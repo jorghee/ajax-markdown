@@ -1,10 +1,10 @@
-const path = require("node:path");
-const fs = require("node:fs");
-// const MarkdownIt = require("markdown-it");
+const path = require("path");
+const fs = require("fs");
+const MarkdownIt = require("markdown-it");
 const bp = require("body-parser");
 const express = require("express");
 const app = express();
-// const md = new MarkdownIt();
+const md = new MarkdownIt();
 const MARKDOWN_DIR = path.resolve(__dirname, "files_markdown");
 
 app.use(bp.json());
@@ -41,6 +41,7 @@ app.get('/files/:fileName', (req, res) => {
     res.json({html: htmlContent});
   });
 });
+
 // Crear un archivo
 app.post("/files", (request, response) => {
   // Recuperamos los valores
