@@ -1,5 +1,7 @@
-const path = require("node:path");
-const fs = require("node:fs");
+const MarkdownIt = require('markdown-it'),
+	md = new MarkdownIt();
+const path = require('path');
+const fs = require("fs");
 // const MarkdownIt = require("markdown-it");
 const bp = require("body-parser");
 const express = require("express");
@@ -30,20 +32,16 @@ app.get("/files", (request, response) => {
   });
 });
 
-// Crear un archivo
-app.post("/files", (request, response) => {
-  // Recuperamos los valores
-  const { filename, content } = request.body;
-  console.log(filename, content);
-
+app.get('/files/:fileName', (req, res) => {
+  const filename = req.params.fileName;
   const filePath = path.resolve(MARKDOWN_DIR, filename);
-  fs.writeFile(filePath, content, error => {
-    if (error) {
-      console.log(error);
-      response.json({ error: "No se pudo crear el archivo" });
+  
+  fs.readFile(filePath, 'utf8', (err, data) => {
+    if (err) {
+      return res.status(500).json({ error: "Unable to read file" });
     }
-
-    response.json({ message: "Archivo creado existosamente" });
+    const htmlContent = md.render(data);
+    res.json({html: htmlContent});
   });
 });
 
