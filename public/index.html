@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
   <title>Markdown Editor</title>
   <meta name="description" content="Servidor que te permite crear archivos Markdown y poder almacenarlos">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
+
 <body>
-  <h1>Markdown Editor</h1>
+  <h1>MARKDOWN EDITOR</h1>
   <div id="file-list">
     <h2>Archivos</h2>
     <ul id="files"></ul>
   </div>
-
-  <div class="preview" id="file-preview"></div>
+  <div id="content"></div>
 
   <input type="text" id="newFileName" placeholder="Ingresa el nombre del nuevo archivo">
 
@@ -23,7 +25,7 @@
   </div>
 
   <button id="createFile">Crear archivo</button>
-  <div id="content"></div>
   <script type="module" src="js/main.js"></script>
 </body>
+
 </html>
