@@ -1,5 +1,5 @@
 import { listMarkdownFiles } from "./listMarkdown.js";
-import { showMarkdownFile } from "./showMarkdownFile.js";
+import { showMarkdownFile } from "./showMarkdown.js";
 import { createMarkdownFile } from "./createMarkdown.js";
 
 listMarkdownFiles();
